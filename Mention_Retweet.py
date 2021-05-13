@@ -18,7 +18,7 @@ ACCESS_TOKEN_SECRET = config('Access_Token_Secret')
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET_KEY)
 auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth)
-userID = "Aritraroy24Roy"
+userID = "aritraroy24"
 
 def get_date_list(tweets):
     # Getting tweet date-time
@@ -47,7 +47,7 @@ def get_id_list(date_list, mentions):
     # Getting tweet text
     new_list = []
     for minute, tweet in zip(date_list, mentions):
-        if "@Aritraroy24Roy" in tweet.full_text and int(minute) <= 1440:
+        if "@aritraroy24" in tweet.full_text and int(minute) <= 1440:
             new_list.append(tweet.id)
     return new_list
 
